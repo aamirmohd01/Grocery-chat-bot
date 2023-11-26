@@ -1,0 +1,1886 @@
+{
+  "name": "GroceryBot-action",
+  "type": "action",
+  "counts": {
+    "actions": 5,
+    "intents": 2,
+    "entities": 8,
+    "data_types": 0,
+    "collections": 0,
+    "global_variables": 3
+  },
+  "status": "Available",
+  "language": "en",
+  "skill_id": "5d0e00c0-7c8a-4a6c-aaec-5c2369ac2ee7",
+  "workspace": {
+    "actions": [
+      {
+        "steps": [
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Welcome to World's Best Grocery Store"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_001"
+          }
+        ],
+        "title": "Greet customer",
+        "action": "welcome",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "welcome"
+        },
+        "variables": [
+          {
+            "title": "Welcome to World's Best Grocery Store",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_001",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_3427",
+        "disambiguation_opt_out": true
+      },
+      {
+        "steps": [
+          {
+            "step": "digression_failure",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Sorry I couldn't confirm if you wanted to return to previous topic, let me connect to an agent."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "digression_failure",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Failed to confirm topic return"
+                }
+              ]
+            },
+            "next_step": "step_001"
+          },
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "I'm afraid I don't understand. I can connect you to an agent."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_001",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Step validation failed"
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Sorry I couldn't assist you. I will connect you to an agent right away."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_002",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Agent requested"
+                }
+              ]
+            },
+            "next_step": "step_003"
+          },
+          {
+            "step": "step_003",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "I am afraid I do not understand what you are asking, let me connect you to an agent."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_003",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "No action matches"
+                }
+              ]
+            },
+            "next_step": "step_004"
+          },
+          {
+            "step": "step_004",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "It seems this conversation would be best managed by a human agent. Let me connect you to one of our agents."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_004",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Danger word detected"
+                }
+              ]
+            },
+            "next_step": "step_005"
+          },
+          {
+            "step": "step_005",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "It seems this conversation would be best managed by a human agent. Let me connect you to one of our agents."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_005",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Profanity detected"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "Fallback",
+        "action": "fallback",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "fallback_connect_to_agent"
+        },
+        "variables": [
+          {
+            "title": "Topic return failed",
+            "variable": "digression_failure",
+            "data_type": "any"
+          },
+          {
+            "title": "I'm afraid I don't understand. I can connect you to an agent.",
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "title": "Sorry I couldn't assist you. I will connect you to an agent righ",
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "title": "I am afraid I do not understand what you are asking, let me conn",
+            "variable": "step_003",
+            "data_type": "any"
+          },
+          {
+            "title": "It seems this conversation would be best managed",
+            "variable": "step_004",
+            "data_type": "any"
+          },
+          {
+            "title": "Profanity - It seems this conversation",
+            "variable": "step_005",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "run_always",
+        "disambiguation_opt_out": true
+      },
+      {
+        "steps": [
+          {
+            "step": "danger_word_detected",
+            "title": "Connect to agent",
+            "handlers": [],
+            "resolver": {
+              "type": "fallback"
+            },
+            "variable": "danger_word_detected_variable",
+            "condition": {
+              "entity": "danger_words"
+            },
+            "next_step": "profanity_detected"
+          },
+          {
+            "step": "profanity_detected",
+            "title": "Show warning",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Please use appropriate language when interacting with the assistant."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "max_hits",
+                "handler": "max_hits_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "max_hits": 2,
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "profanity_detected_variable",
+            "condition": {
+              "entity": "profane_words"
+            }
+          }
+        ],
+        "title": "Trigger word detected",
+        "action": "run_always",
+        "boosts": [],
+        "handlers": [],
+        "variables": [
+          {
+            "title": "Profanity detected",
+            "variable": "danger_word_detected_variable",
+            "data_type": "any"
+          },
+          {
+            "title": "Profane word detected",
+            "variable": "profanity_detected_variable",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "anything_else"
+      },
+      {
+        "steps": [
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "I'm afraid I don't understand. Please rephrase your question."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_001",
+            "condition": {
+              "lte": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": 3
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": ""
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action_and_end",
+              "invoke_action": {
+                "action": "fallback",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_002_result_1"
+              }
+            },
+            "variable": "step_002",
+            "condition": {
+              "gt": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": 3
+                }
+              ]
+            }
+          }
+        ],
+        "title": "No action matches",
+        "action": "anything_else",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "anything_else"
+        },
+        "variables": [
+          {
+            "title": "I am afraid I do not understand what you are asking, please re-p",
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002_result_1",
+            "data_type": "any"
+          }
+        ],
+        "disambiguation_opt_out": true
+      },
+      {
+        "steps": [
+          {
+            "step": "step_587",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Hi, I am GroceryBot"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_587",
+            "next_step": "step_924"
+          },
+          {
+            "step": "step_924",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "May i know your name?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_924",
+            "next_step": "step_639"
+          },
+          {
+            "step": "step_639",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Hi "
+                          },
+                          {
+                            "skill_variable": "name"
+                          },
+                          {
+                            "scalar": ",\n\nChoose from the following categoreis:-"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Snacks & Bevarages",
+                      "value": {
+                        "input": {
+                          "text": "Snacks & Bevarages"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Home & Kitchens",
+                      "value": {
+                        "input": {
+                          "text": "Home & Kitchens"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Fruits & Vegetables",
+                      "value": {
+                        "input": {
+                          "text": "Fruits & Vegetables"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Dairy & Eggs",
+                      "value": {
+                        "input": {
+                          "text": "Dairy & Eggs"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_924"
+                  },
+                  "skill_variable": "name"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_49306",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_639",
+            "next_step": "step_907"
+          },
+          {
+            "step": "step_907",
+            "output": {
+              "generic": [
+                {
+                  "time": 1000,
+                  "typing": true,
+                  "response_type": "pause"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_639"
+                  },
+                  "skill_variable": "options"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_907",
+            "next_step": "step_457"
+          },
+          {
+            "step": "step_457",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "choose from the folllowing items:"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Potato Chips",
+                      "value": {
+                        "input": {
+                          "text": "Potato Chips"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Chocolate",
+                      "value": {
+                        "input": {
+                          "text": "Chocolate"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Red Bull",
+                      "value": {
+                        "input": {
+                          "text": "Red Bull"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Sprite",
+                      "value": {
+                        "input": {
+                          "text": "Sprite"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_41782",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_457",
+            "condition": {
+              "expression": "${options}==\"Snacks & Bevarages\""
+            },
+            "next_step": "step_379"
+          },
+          {
+            "step": "step_379",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "choose from the folllowing items:"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Pressure Cooker",
+                      "value": {
+                        "input": {
+                          "text": "Pressure Cooker"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Curtains",
+                      "value": {
+                        "input": {
+                          "text": "Curtains"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Rice",
+                      "value": {
+                        "input": {
+                          "text": "Rice"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Dal",
+                      "value": {
+                        "input": {
+                          "text": "Dal"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_39623",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_379",
+            "condition": {
+              "expression": "${options}==\"Home & Kitchens\""
+            },
+            "next_step": "step_526"
+          },
+          {
+            "step": "step_526",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "choose from the folllowing items:"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Mango",
+                      "value": {
+                        "input": {
+                          "text": "Mango"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Apple",
+                      "value": {
+                        "input": {
+                          "text": "Apple"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Potato",
+                      "value": {
+                        "input": {
+                          "text": "Potato"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Cauliflower",
+                      "value": {
+                        "input": {
+                          "text": "Cauliflower"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_3447",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_526",
+            "condition": {
+              "expression": "${options}==\"Fruits & Vegetables\""
+            },
+            "next_step": "step_747"
+          },
+          {
+            "step": "step_747",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "choose from the folllowing items:"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Paneer",
+                      "value": {
+                        "input": {
+                          "text": "Paneer"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Milk",
+                      "value": {
+                        "input": {
+                          "text": "Milk"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Cheese",
+                      "value": {
+                        "input": {
+                          "text": "Cheese"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Eggs",
+                      "value": {
+                        "input": {
+                          "text": "Eggs"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_17701",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_747",
+            "condition": {
+              "expression": "${options}==\"Dairy & Eggs\""
+            },
+            "next_step": "step_801"
+          },
+          {
+            "step": "step_801",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Congrats! your order "
+                          },
+                          {
+                            "skill_variable": "snacks"
+                          },
+                          {
+                            "scalar": " has been placed.\n\nThank you ! Visit again"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_457"
+                  },
+                  "skill_variable": "snacks"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_801",
+            "condition": {
+              "expression": "${options}==\"Snacks & Bevarages\""
+            },
+            "next_step": "step_113"
+          },
+          {
+            "step": "step_113",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Congrats! your order "
+                          },
+                          {
+                            "skill_variable": "snacks"
+                          },
+                          {
+                            "scalar": " has been placed.\n\nThank you ! Visit again"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_379"
+                  },
+                  "skill_variable": "snacks"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_113",
+            "condition": {
+              "expression": "${options}==\"Home & Kitchens\""
+            },
+            "next_step": "step_950"
+          },
+          {
+            "step": "step_950",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Congrats! your order "
+                          },
+                          {
+                            "skill_variable": "snacks"
+                          },
+                          {
+                            "scalar": " has been placed.\n\nThank you ! Visit again"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_526"
+                  },
+                  "skill_variable": "snacks"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_950",
+            "condition": {
+              "expression": "${options}==\"Fruits & Vegetables\""
+            },
+            "next_step": "step_451"
+          },
+          {
+            "step": "step_451",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Congrats! your order "
+                          },
+                          {
+                            "skill_variable": "snacks"
+                          },
+                          {
+                            "scalar": " has been placed.\n\nThank you ! Visit again"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_747"
+                  },
+                  "skill_variable": "snacks"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_451",
+            "condition": {
+              "expression": "${options}==\"Dairy & Eggs\""
+            }
+          }
+        ],
+        "title": "Grocery Bot",
+        "action": "action_3427",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_3427_intent_5993"
+        },
+        "variables": [
+          {
+            "title": "Congrats! your order {variable} has been placed. Thank you ! Vis",
+            "privacy": {
+              "enabled": true
+            },
+            "variable": "step_113",
+            "data_type": "any"
+          },
+          {
+            "title": "choose from the folllowing:",
+            "privacy": {
+              "enabled": true
+            },
+            "variable": "step_379",
+            "data_type": "any"
+          },
+          {
+            "title": "Congrats! your order {variable} has been placed. Thank you ! Vis",
+            "privacy": {
+              "enabled": true
+            },
+            "variable": "step_451",
+            "data_type": "any"
+          },
+          {
+            "title": "choose from the folllowing items:",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_457",
+            "data_type": "any"
+          },
+          {
+            "title": "Congrats! your order {variable} has been placed. Thank you for s",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_474",
+            "data_type": "any"
+          },
+          {
+            "title": "choose from the folllowing items:",
+            "privacy": {
+              "enabled": true
+            },
+            "variable": "step_526",
+            "data_type": "any"
+          },
+          {
+            "title": "Hi, I am GroceryBot",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_587",
+            "data_type": "any"
+          },
+          {
+            "title": "Hi {variable}, Choose from the following categoreis:-",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_639",
+            "data_type": "any"
+          },
+          {
+            "title": "choose from the folllowing items:",
+            "privacy": {
+              "enabled": true
+            },
+            "variable": "step_747",
+            "data_type": "any"
+          },
+          {
+            "title": "Congrats! your order {variable} has been placed. Thank you ! Vis",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_801",
+            "data_type": "any"
+          },
+          {
+            "title": "",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_907",
+            "data_type": "any"
+          },
+          {
+            "title": "May i know your name?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_924",
+            "data_type": "any"
+          },
+          {
+            "title": "Congrats! your order {variable} has been placed. Thank you ! Vis",
+            "privacy": {
+              "enabled": true
+            },
+            "variable": "step_950",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "fallback",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      }
+    ],
+    "intents": [
+      {
+        "intent": "action_3427_intent_5993",
+        "examples": [
+          {
+            "text": "hlo"
+          },
+          {
+            "text": "Helaw"
+          },
+          {
+            "text": "Good Morning"
+          },
+          {
+            "text": "good mrng"
+          },
+          {
+            "text": "gud mrng"
+          },
+          {
+            "text": "hii"
+          },
+          {
+            "text": "Greeting"
+          },
+          {
+            "text": "Hi"
+          },
+          {
+            "text": "Hiii"
+          },
+          {
+            "text": "Hello"
+          }
+        ]
+      },
+      {
+        "intent": "fallback_connect_to_agent",
+        "examples": [
+          {
+            "text": "Agent help"
+          },
+          {
+            "text": "I would like to speak to a human"
+          },
+          {
+            "text": "Can I connect to an agent?"
+          },
+          {
+            "text": "I would like to speak to someone"
+          },
+          {
+            "text": "Call agent"
+          }
+        ],
+        "description": "Please transfer me to an agent"
+      }
+    ],
+    "entities": [
+      {
+        "entity": "entity_49306",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Snacks & Bevarages",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Dairy & Eggs",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Fruits & Vegetables",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Home & Kitchens",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "profane_words",
+        "values": [],
+        "fuzzy_match": false
+      },
+      {
+        "entity": "danger_words",
+        "values": [],
+        "fuzzy_match": false
+      },
+      {
+        "entity": "entity_39623",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Curtains",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Dal",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Pressure Cooker",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Rice",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_41782",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Sprite",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Red Bull",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Potato Chips",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Chocolate",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_3447",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Cauliflower",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Apple",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Mango",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Potato",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "sys-yes-no",
+        "values": []
+      },
+      {
+        "entity": "entity_17701",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Paneer",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Milk",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Eggs",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Cheese",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      }
+    ],
+    "metadata": {
+      "skill": {
+        "counts": {
+          "actions": 5,
+          "intents": 2,
+          "entities": 8,
+          "data_types": 0,
+          "collections": 0,
+          "global_variables": 3
+        }
+      },
+      "api_version": {
+        "major_version": "v2",
+        "minor_version": "2018-11-08"
+      }
+    },
+    "variables": [
+      {
+        "title": "name",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "name",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "options",
+        "variable": "options",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "snacks",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "snacks",
+        "data_type": "string",
+        "description": ""
+      }
+    ],
+    "data_types": [],
+    "collections": [],
+    "counterexamples": [],
+    "system_settings": {
+      "variable": {
+        "format": {
+          "time": {
+            "pattern": "short"
+          },
+          "currency": {
+            "fraction_digits": 2
+          }
+        }
+      },
+      "off_topic": {
+        "enabled": true
+      },
+      "auto_learn": {
+        "apply": true
+      },
+      "topic_switch": {
+        "enabled": true,
+        "messages": {
+          "enable_confirmation": true,
+          "confirmation_failure": {
+            "generic": [
+              {
+                "values": [
+                  {
+                    "text_expression": {
+                      "concat": [
+                        {
+                          "scalar": "I'm sorry, I did not catch that, please confirm."
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "response_type": "text",
+                "selection_policy": "sequential"
+              }
+            ]
+          },
+          "confirmation_request": {
+            "generic": [
+              {
+                "values": [
+                  {
+                    "text_expression": {
+                      "concat": [
+                        {
+                          "scalar": "Do you want to continue with the previous topic: "
+                        },
+                        {
+                          "system_variable": "digressed_from"
+                        },
+                        {
+                          "scalar": "?"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "response_type": "text",
+                "selection_policy": "sequential"
+              },
+              {
+                "options": [
+                  {
+                    "label": "Yes",
+                    "value": {
+                      "input": {
+                        "text": "Yes"
+                      }
+                    }
+                  },
+                  {
+                    "label": "No",
+                    "value": {
+                      "input": {
+                        "text": "No"
+                      }
+                    }
+                  }
+                ],
+                "response_type": "option",
+                "repeat_on_reprompt": true
+              }
+            ]
+          }
+        },
+        "max_tries": 3
+      },
+      "generative_ai": {
+        "slot_filling": {
+          "enabled": false
+        }
+      },
+      "disambiguation": {
+        "prompt": "Did you mean:",
+        "enabled": true,
+        "randomize": true,
+        "max_suggestions": 5,
+        "suggestion_text_policy": "title",
+        "none_of_the_above_prompt": "None of the above",
+        "use_connect_to_support_prompt": "Connect to support",
+        "single_answer_clarification_prompt": "Something else"
+      },
+      "spelling_auto_correct": true
+    },
+    "learning_opt_out": false,
+    "language": "en"
+  },
+  "description": "created for assistant b202e1cf-cfd4-4318-b0ab-eee96089e55c",
+  "dialog_settings": {
+    "source_assistant": "55dbfec8-3c3a-436e-bf94-ba69cfda95be"
+  },
+  "created": "2023-11-25T19:34:09.369Z",
+  "updated": "2023-11-25T19:34:09.369Z",
+  "snapshot": "3",
+  "assistant_id": "b202e1cf-cfd4-4318-b0ab-eee96089e55c",
+  "assistant_references": [
+    {
+      "name": "GroceryBot",
+      "assistant_id": "55dbfec8-3c3a-436e-bf94-ba69cfda95be",
+      "skill_reference": "actions skill"
+    }
+  ]
+}
