@@ -18,7 +18,7 @@ The future GroceryBot project holds exciting possibilities, driven by advancemen
 4. Expanded Product Offerings
 5. Predictive Analytics
 6. Continuous User Feedback
-The future of this project is dynamic and will be shaped by ongoing user feedback, technological advancements, and the strategic decisions of your project team. Regularly assess market trends, stay informed about industry developments, and be agile in adapting the chatbot to meet the evolving needs of users and the retail landscape.
+ The future of this project is dynamic and will be shaped by ongoing user feedback, technological advancements, and the strategic decisions of your project team. Regularly assess market trends, stay informed about industry developments, and be agile in adapting the chatbot to meet the evolving needs of users and the retail landscape.
 
 
 Here are some of the visuals from the chatbot:
