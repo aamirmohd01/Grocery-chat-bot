@@ -2,11 +2,11 @@
 
 The proposed solution of implementing a chatbot for grocery store aims to address the mentioned issues effectively.
 Here's how the chatbot solution can tackle each problem:
-*Personalization:* Utilize user data and preferences to personalize product recommendations, creating a tailored shopping experience for each user.
-*Speak the Language of Shopping:* Develop a chatbot interface that speaks the language of the modern shopper, using natural language processing to create a dynamic and enjoyable conversation.
-*Discover, Don't Just Search:* Empower users to rediscover the joy of grocery shopping by effortlessly navigating through an extensive array of products, guided by an intuitive and responsive chatbot.
-*Product Discovery:* Enable users to easily discover and explore a wide range of grocery products through intuitive and context-aware conversations with the chatbot.
-*Integration:* Seamlessly integrate the chatbot with existing e-commerce platforms, ensuring compatibility and providing a cohesive shopping experience across various channels.
+1. *Personalization:* Utilize user data and preferences to personalize product recommendations, creating a tailored shopping experience for each user.
+2. *Speak the Language of Shopping:* Develop a chatbot interface that speaks the language of the modern shopper, using natural language processing to create a dynamic and enjoyable conversation.
+3. *Discover, Don't Just Search:* Empower users to rediscover the joy of grocery shopping by effortlessly navigating through an extensive array of products, guided by an intuitive and responsive chatbot.
+4. *Product Discovery:* Enable users to easily discover and explore a wide range of grocery products through intuitive and context-aware conversations with the chatbot.
+5. *Integration:* Seamlessly integrate the chatbot with existing e-commerce platforms, ensuring compatibility and providing a cohesive shopping experience across various channels.
 
 
 *Future scope:*
